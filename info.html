@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi UNP</title>
+    <style>
+        body {
+            background-image: url('rektorat.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.54);
+            background-blend-mode: darken;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            background-color: #3333cc;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header {
+            flex-direction: row;
+            position: relative;
+        }
+        header img {
+            height: 90px;
+            margin-right: 15px;
+        }
+        .header-text {
+            text-align: center;
+        }
+        .year {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .burger-menu {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .menu-list {
+            display: none;
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            background: white;
+            color: black;
+            list-style: none;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .menu-list.show {
+            display: block;
+            opacity: 1;
+            transform: scaleY(1);
+        }
+        .menu-list li {
+            padding: 10px 15px;
+        }
+        .menu-list a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            transition: color 0.2s ease-in-out;
+        }
+        .menu-list a:hover {
+            color: #3333cc;
+        }
+        main {
+            padding: 20px;
+            text-align: left;
+        }
+        .info-box {
+            background: rgba(255, 255, 255, 0.27); /* Latar belakang putih transparan 27% */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: white; /* Teks berwarna putih */
+        }
+        .info-box h2 {
+            margin-top: 0;
+            color: white; /* Judul berwarna putih */
+        }
+        .info-box h3 {
+            color: white; /* Subjudul berwarna putih */
+        }
+        .info-box ul {
+            color: white; /* Teks dalam list berwarna putih */
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .footer-content img {
+            height: 80px;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .burger-menu {
+                top: 10px;
+                left: 10px;
+            }
+            .menu-list {
+                left: 10px;
+                top: 40px;
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body onclick="closeMenu(event)">
+    <header>
+        <img src="unp.png" alt="Logo UNP">
+        <div class="header-text">
+            <h2>Informasi Universitas Negeri Padang</h2>
+            <div class="year">2025</div>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu(event)">☰ Menu</div>
+        <ul class="menu-list" id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Informasi</a></li>
+            <li><a href="daftar.html">Pendaftaran</a></li>
+        </ul>
+    </header>
+    <main>
+        <!-- Blok Keunggulan dan Akreditasi -->
+        <div class="info-box">
+            <h2>Keunggulan dan Akreditasi UNP</h2>
+            <p>Universitas Negeri Padang (UNP) merupakan salah satu perguruan tinggi negeri terkemuka di Indonesia dengan berbagai keunggulan dan akreditasi yang membanggakan:</p>
+            <ul>
+                <li><strong>Akreditasi A:</strong> UNP telah meraih akreditasi A dari BAN-PT (Badan Akreditasi Nasional Perguruan Tinggi).</li>
+                <li><strong>Fasilitas Lengkap:</strong> UNP dilengkapi dengan fasilitas modern seperti laboratorium, perpustakaan, dan ruang kuliah berteknologi tinggi.</li>
+                <li><strong>Dosen Berkualitas:</strong> Dosen-dosen UNP merupakan lulusan dari perguruan tinggi ternama di dalam dan luar negeri.</li>
+                <li><strong>Kerjasama Internasional:</strong> UNP memiliki kerjasama dengan berbagai universitas di luar negeri untuk program pertukaran pelajar dan penelitian.</li>
+            </ul>
+        </div>
+
+        <!-- Blok Visi dan Misi UNP -->
+        <div class="info-box">
+            <h2>Visi dan Misi UNP</h2>
+            <h3>Visi:</h3>
+            <p>Menjadi universitas unggul yang menghasilkan sumber daya manusia berkarakter, berdaya saing global, dan berwawasan lingkungan.</p>
+            <h3>Misi:</h3>
+            <ul>
+                <li>Menyelenggarakan pendidikan tinggi yang berkualitas dan relevan dengan kebutuhan masyarakat.</li>
+                <li>Mengembangkan penelitian inovatif dan bermanfaat bagi kemajuan ilmu pengetahuan dan teknologi.</li>
+                <li>Melaksanakan pengabdian kepada masyarakat untuk meningkatkan kesejahteraan sosial.</li>
+                <li>Membangun kerjasama dengan berbagai pihak untuk meningkatkan kualitas pendidikan dan penelitian.</li>
+            </ul>
+        </div>
+
+        <!-- Blok Daftar Program Studi -->
+        <div class="info-box">
+            <h2>Daftar Program Studi di UNP</h2>
+            <h3>1. Fakultas Ilmu Pendidikan (FIP)</h3>
+            <ul>
+                <li>Administrasi Pendidikan (S1, S2, S3)</li>
+                <li>Bimbingan dan Konseling (S1, S2, S3)</li>
+                <li>Pendidikan Guru Pendidikan Anak Usia Dini (S1, S2)</li>
+                <li>Pendidikan Guru Sekolah Dasar (S1)</li>
+                <li>Pendidikan Luar Biasa (S1)</li>
+                <li>Pendidikan Luar Sekolah (S1)</li>
+                <li>Kurikulum dan Teknologi Pendidikan (S1)</li>
+                <li>Pendidikan Dasar (S2)</li>
+            </ul>
+
+            <h3>2. Fakultas Bahasa dan Seni (FBS)</h3>
+            <ul>
+                <li>Desain Komunikasi Visual (S1)</li>
+                <li>Perpustakaan dan Ilmu Informasi (S1)</li>
+                <li>Pendidikan Bahasa dan Sastra Indonesia (S1, S2)</li>
+                <li>Pendidikan Bahasa Inggris (S1, S2)</li>
+                <li>Pendidikan Bahasa Jepang (S1)</li>
+                <li>Pendidikan Seni Drama, Tari, dan Musik (S1)</li>
+                <li>Pendidikan Seni Rupa (S1)</li>
+                <li>Pendidikan Musik (S1)</li>
+                <li>Sastra Indonesia (S1)</li>
+                <li>Sastra Inggris (S1)</li>
+                <li>Pendidikan Tari (S1)</li>
+                <li>Ilmu Keguruan Bahasa (S3)</li>
+            </ul>
+
+            <h3>3. Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA)</h3>
+            <ul>
+                <li>Biologi (S1)</li>
+                <li>Fisika (S1)</li>
+                <li>Kimia (S1)</li>
+                <li>Matematika (S1)</li>
+                <li>Pendidikan Biologi (S1, S2)</li>
+                <li>Pendidikan Fisika (S1, S2)</li>
+                <li>Pendidikan Kimia (S1, S2)</li>
+                <li>Pendidikan Matematika (S1, S2)</li>
+                <li>Pendidikan Ilmu Pengetahuan Alam (S1, S3)</li>
+                <li>Statistika (S1)</li>
+            </ul>
+
+            <h3>4. Fakultas Ilmu Sosial (FIS)</h3>
+            <ul>
+                <li>Geografi (S1)</li>
+                <li>Ilmu Administrasi Negara (S1)</li>
+                <li>Pendidikan Geografi (S1, S2)</li>
+                <li>Pendidikan Pancasila dan Kewarganegaraan (S1, S2)</li>
+                <li>Pendidikan Sejarah (S1)</li>
+                <li>Pendidikan Sosiologi (S1)</li>
+                <li>Pendidikan Keagamaan Islam (S1)</li>
+            </ul>
+
+            <h3>5. Fakultas Teknik (FT)</h3>
+            <ul>
+                <li>Teknik Otomotif (D3)</li>
+                <li>Teknik Mesin (D3, S1)</li>
+                <li>Teknik Pertambangan (D3, S1)</li>
+                <li>Teknik Listrik (D3)</li>
+                <li>Teknik Elektronika (D3)</li>
+                <li>Teknik Sipil Bangunan Gedung (D3)</li>
+                <li>Pendidikan Teknik Bangunan (S1)</li>
+                <li>Pendidikan Teknik Informatika (S1)</li>
+                <li>Pendidikan Teknik Mesin (S1)</li>
+                <li>Teknik Sipil (S1)</li>
+                <li>Pendidikan Teknik Elektro (S1)</li>
+                <li>Pendidikan Teknik Otomotif (S1)</li>
+                <li>Pendidikan Teknik Elektronika (S1)</li>
+                <li>Informatika (S1)</li>
+                <li>Pendidikan Teknologi dan Kejuruan (S2, S3)</li>
+            </ul>
+
+            <h3>6. Fakultas Ekonomi (FE)</h3>
+            <ul>
+                <li>Akuntansi (D3, S1)</li>
+                <li>Manajemen Pajak (D3)</li>
+                <li>Manajemen Perdagangan (D3)</li>
+                <li>Manajemen (S1, S2)</li>
+                <li>Ekonomi Pembangunan (S1)</li>
+                <li>Pendidikan Ekonomi (S1, S2)</li>
+                <li>Ilmu Ekonomi (S2)</li>
+                <li>Kajian Lingkungan dan Pembangunan (S3)</li>
+            </ul>
+
+            <h3>7. Fakultas Ilmu Keolahragaan (FIK)</h3>
+            <ul>
+                <li>Pendidikan Jasmani, Kesehatan, dan Rekreasi (S1)</li>
+                <li>Pendidikan Kepelatihan Olahraga (S1)</li>
+                <li>Ilmu Keolahragaan (S1, S2, S3)</li>
+                <li>Pendidikan Olahraga (S2)</li>
+            </ul>
+
+            <h3>8. Fakultas Pariwisata dan Perhotelan (FPP)</h3>
+            <ul>
+                <li>Tata Busana (D3)</li>
+                <li>Tata Boga (D3)</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Website: <a href="https://unp.ac.id" style="color: white;">https://unp.ac.id</a></p>
+            <p>Email: info@unp.ac.id</p>
+            <p>Telepon: (0751) 7058697</p>
+            <p>Alamat: Jl. Prof. Dr. Hamka, Air Tawar, Padang, Sumatera Barat</p>
+            <img src="unp.png" alt="Logo UNP">
+        </div>
+    </footer>
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation();
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+        function closeMenu(event) {
+            var menu = document.getElementById("menu");
+            var burger = document.querySelector(".burger-menu");
+            if (!menu.contains(event.target) && !burger.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        }
+    </script>
+</body>
+</html>
